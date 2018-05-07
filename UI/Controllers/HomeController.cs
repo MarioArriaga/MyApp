@@ -32,9 +32,6 @@ namespace UI.Controllers
                     httpRequest.ContentType = "application/json";
                     using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
                     {
-                        //httpRequest.ContentLength = model.ToString().Length;
-
-                        //var streamWriter = new StreamWriter();
                         var json = String.Format("\"Name\":\"{0}\",\"Address\":\"{1}\",\"Telephone\":\"{2}\"", model.Name, model.Address, model.Telephone);
                         streamWriter.Write("{" + json + "}");
                         streamWriter.Flush();
@@ -50,28 +47,6 @@ namespace UI.Controllers
                     }
 
                     return View("RecordedInfo", model);
-                    //try
-                    //{
-                    //    using (client = new HttpClient())
-                    //    {
-                    //        client.BaseAddress = new Uri("http://localhost:35796/");
-                    //        client.DefaultRequestHeaders.Accept.Clear();
-                    //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    //        var response = await client.PostAsJsonAsync("api/People", model);
-
-                    //        if (response.IsSuccessStatusCode)
-                    //        {
-                    //            //HttpMessageTextBox.Text = await response.Content.ReadAsStringAsync();
-                    //            ViewBag.Message = await response.Content.ReadAsStringAsync();
-                    //            return View();
-                    //        }
-
-                    //    }
-                    //}
-                    //catch (Exception ex)
-                    //{
-
-                    //}
                 }
             }
             
