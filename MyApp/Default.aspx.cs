@@ -5,6 +5,8 @@ using System.Net.Http.Headers;
 using System.Net.Http.Formatting;
 using System.Collections.Generic;
 using DAL.Entities;
+using DAL.Interfaces;
+
 namespace MyApp
 {
     public partial class _Default : Page
@@ -17,7 +19,7 @@ namespace MyApp
 
         protected async void RecordData_ClickAsync(object sender, EventArgs e)
         {
-            var person = new Person()
+            var person = new IPerson()
             {
                 Name = Name.Text,
                 Address = Address.Text,

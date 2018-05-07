@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Configuration;
-using DAL.Entities;
+using DAL.Interfaces;
 
 namespace DAL.DomainServices
 {
@@ -11,6 +11,6 @@ namespace DAL.DomainServices
             this.Database.Connection.ConnectionString =
                 ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<IPerson> Persons { get; set; }
     }
 }

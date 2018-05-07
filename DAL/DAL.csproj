@@ -50,13 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain services\Repositories\PersonRepository.cs" />
+    <Compile Include="Domain model\Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IPersonRepository.cs" />
     <Compile Include="Migrations\201804161604068_FirstMigration.cs" />
     <Compile Include="Migrations\201804161604068_FirstMigration.Designer.cs">
       <DependentUpon>201804161604068_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805070204261_IPerson.cs" />
+    <Compile Include="Migrations\201805070204261_IPerson.Designer.cs">
+      <DependentUpon>201805070204261_IPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Domain model\Person.cs" />
+    <Compile Include="Domain model\Entities\Person.cs" />
     <Compile Include="Domain services\PersonContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804161604068_FirstMigration.resx">
       <DependentUpon>201804161604068_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805070204261_IPerson.resx">
+      <DependentUpon>201805070204261_IPerson.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -1,6 +1,8 @@
-﻿namespace DAL.Entities
+﻿using DAL.Interfaces;
+
+namespace DAL.Entities
 {
-    public class Person
+    class Person : IPerson
     {
         public int Id { get; set; }
         public string Name { get; set; }

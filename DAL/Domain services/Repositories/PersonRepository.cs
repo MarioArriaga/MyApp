@@ -10,31 +10,31 @@ namespace DAL.Infrastructure.Repository
     {
         PersonContext context = new PersonContext();
 
-        public void Add(Person p)
+        public void Add(IPerson p)
         {
             context.Persons.Add(p);
             context.SaveChanges();
         }
 
-        public void Edit(Person p)
+        public void Edit(IPerson p)
         {
             context.Entry(p).State = System.Data.Entity.EntityState.Modified;
         }
 
-        public Person FindById(int Id)
+        public IPerson FindById(int Id)
         {
             var p = (from r in context.Persons where r.Id == Id select r).FirstOrDefault();
             return p;
         }
 
-        public IEnumerable<Person> GetPerson()
+        public IEnumerable<IPerson> GetPerson()
         {
             return context.Persons;
         }
 
         public void Remove(string Id)
         {
-            Person p = context.Persons.Find(Id);
+            IPerson p = context.Persons.Find(Id);
             context.Persons.Remove(p);
             context.SaveChanges();
         }

@@ -20,16 +20,16 @@ namespace API.Controllers
         private IPersonRepository repo = new PersonRepository();
 
         // GET: api/People
-        public IQueryable<Person> GetPersons()
+        public IQueryable<IPerson> GetPersons()
         {
-            return repo.GetPerson().AsQueryable<Person>();
+            return repo.GetPerson().AsQueryable<IPerson>();
         }
 
         // GET: api/People/5
-        [ResponseType(typeof(Person))]
+        [ResponseType(typeof(IPerson))]
         public IHttpActionResult GetPerson(int id)
         {
-            Person person = repo.FindById(id);
+            IPerson person = repo.FindById(id);
             if (person == null)
             {
                 return NotFound();
@@ -40,7 +40,7 @@ namespace API.Controllers
 
         // PUT: api/People/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPerson(int id, Person person)
+        public IHttpActionResult PutPerson(int id, IPerson person)
         {
             if (!ModelState.IsValid)
             {
@@ -74,8 +74,8 @@ namespace API.Controllers
         }
 
         // POST: api/People
-        [ResponseType(typeof(Person))]
-        public IHttpActionResult PostPerson(Person person)
+        [ResponseType(typeof(IPerson))]
+        public IHttpActionResult PostPerson(IPerson person)
         {
             if (!ModelState.IsValid)
             {
@@ -89,10 +89,10 @@ namespace API.Controllers
         }
 
         // DELETE: api/People/5
-        [ResponseType(typeof(Person))]
+        [ResponseType(typeof(IPerson))]
         public IHttpActionResult DeletePerson(int id)
         {
-            Person person = repo.FindById(id);
+            IPerson person = repo.FindById(id);
             if (person == null)
             {
                 return NotFound();

@@ -5,11 +5,11 @@ namespace DAL.Interfaces
 {
     public interface IPersonRepository
     {
-        void Add(Person p);
-        void Edit(Person p);
+        void Add(IPerson p);
+        void Edit(IPerson p);
         void Remove(string Id);
-        IEnumerable<Person> GetPerson();
-        Person FindById(int Id);
+        IEnumerable<IPerson> GetPerson();
+        IPerson FindById(int Id);
         void Dispose();
     }
 }
